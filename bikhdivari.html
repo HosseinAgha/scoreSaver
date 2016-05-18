@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8" />
+	
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.8/react-dom.js"></script>
+	<style>
+		html,body{
+			margin: 0px;
+			padding :0px;
+			background-color: gray;
+			direction: rtl;
+		}
+		body{
+			background-image: url(images/nature.jpg);
+		
+		}
+		#main{
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			margin: 0px auto;
+			padding: 0px;
+		}
+		.scoreBoard {
+			width: 20%;
+			height: auto;
+			overflow: hidden;
+			background-color: rgba(75, 0, 255, 0.32);
+			display: inline-block;
+			float: right;
+		}
+		.imageContainer{
+			width: 150px ;
+			height: 150px;
+			margin: 30px auto;
+			border: 1px dashed gray;
+	    	border-radius: 50px;
+
+		}
+		.imageContainer img{
+			width: 120px;
+			height: 120px;
+			margin: 15px;
+			border-radius: 50%;
+		}
+		.imageContainer figcaption{
+		    width: auto;
+		    height: 10px;
+		    line-height: 0px;
+		    font-size: 11px;
+		    text-align: center;
+		    vertical-align: top;
+		    display: block;
+		    margin: -11px;
+		    font-family: Tahoma;
+		    color: black;
+		}
+		.scoreBoard button{
+			width: 50%;
+			height: 30px;
+			font-family: Tahoma;
+			font-size: 14px;
+			direction: rtl;
+			margin: 30px auto;
+			display: block;
+		}
+		.scoreBoard p{
+			width: 50%;
+			height: 30px;
+			font-family: Tahoma;
+			font-size: 14px;
+			direction: rtl;
+			text-align: center;
+			margin: 30px auto;
+			display: block;
+		}
+		/****** table ******/
+		#scoreInsertWrap {
+			width: 60%;
+			height: auto;
+			overflow: hidden;
+			margin: 0px;
+			background-color: rgba(128, 0, 0, 0.12);
+			display: inline-block;
+			float: right;
+
+		}
+		#scoreInsertWrap .title{
+			font-family: Tahoma;
+			font-size: 14px ;
+			direction: rtl;
+			text-align: center;
+		}
+		.scoreInsertTable{
+			width: 95%;
+			height: auto;
+			margin: 0px auto !important;
+		}
+		.scoreInsertTable,.scoreInsertTable tr,.scoreInsertTable tr td ,.scoreInsertTable tr th{
+			margin: 0px;
+			padding: 0px;
+			border-collapse: collapse;
+		}
+		.scoreInsertTable,	.scoreInsertTable tr td {
+			border: 1px solid #222;
+			font-family: Tahoma;
+			font-size: 14px;
+			text-align: center;
+		}
+		.scoreInsertTable tr{
+			height: 30px ;
+			line-height: 30px;
+		}
+		.valuePlace{
+			margin: 0px;
+			width: 100%;
+			height: 100%;
+			direction: rtl;
+			border: none;
+			outline: 0;
+			background-color: transparent;
+			text-align: center;
+		}
+		#scoreInsertWrap button{
+			width: 150px;
+			height: 30px;
+			text-align: center;
+			font-family: Tahoma;
+			font-size: 14px;
+			display: block;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+
+
+
+
+<body>
+	<div id="main"></div>
+</body>
+<script type="text/babel">
+var PersonNumberClass = React.createClass({
+	render : function () {
+		 return(
+		 	<aside class="scoreBoard">
+				<button>نوبت دهی خودکار</button>
+				<figure class="imageContainer">
+					<img src="images/ahmad.jpg" />
+					<figcaption>نفر اول</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/shoaei.jpg" />
+					<figcaption>نفر دوم</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/abedi.jpg" />
+					<figcaption>نفر سوم</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/mehdi.jpg" />
+					<figcaption>نفر چهارم</figcaption>
+				</figure>
+			</aside>
+		 )
+	}
+})
+
+var ScoreTableClass = React.createClass({
+	render : function (argument) {
+		return(
+			<section id="scoreInsertWrap">
+				<p class="title">جدول ثبت امتیاز</p>
+				<table class="scoreInsertTable">
+					<thead>
+						<tr>
+							<th>سینا شعاعی (0)</th>
+							<th>حسین عابدی (0)</th>
+							<th>احمد ایللو (0)</th>
+							<th>مهدی توحیدلو (0)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="valuePlace" /></td>
+							<td><input type="text" class="valuePlace" /></td>
+							<td><input type="text" class="valuePlace" /></td>
+							<td><input type="text" class="valuePlace" /></td>
+						</tr>
+					</tbody>
+				</table>
+				<button>مرحله بعد!</button>
+			</section>
+		)
+	}
+})
+
+var ScoreViewClass = React.createClass({
+	render : function (argument) {
+		return(
+			<aside class="scoreBoard">
+				<p>نفرات برتر</p>
+				<figure class="imageContainer">
+					<img src="images/ahmad.jpg" />
+					<figcaption>نفر اول</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/shoaei.jpg" />
+					<figcaption>نفر دوم</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/abedi.jpg" />
+					<figcaption>نفر سوم</figcaption>
+				</figure>
+				<figure class="imageContainer">
+					<img src="images/mehdi.jpg" />
+					<figcaption>نفر چهارم</figcaption>
+				</figure>
+			</aside>
+		)
+	}
+})
+
+var Main = React.createClass({
+	render  : function () {
+		alert("hello")
+		return(<div>
+			<PersonNumberClass />
+			<ScoreTableClass />
+			<ScoreViewClass />
+		</div>)
+	}
+})
+
+ReactDOM.render(<Main />,document.getElementById("main"))
+</script>
+</html>
