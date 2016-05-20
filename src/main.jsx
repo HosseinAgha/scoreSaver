@@ -3,7 +3,7 @@
 // var score_cls = require("./js/personNumber.js");
 // this is ES2015 way of importing modules. I imported React and React.Component from react package
 import React, { Component } from 'react';
-import ScoreView from './js/ScoreView'
+import ScoreView from './js/ScoreView.jsx'
 import ReactDOM from 'react-dom';
 import styles from './main.styl';
 
