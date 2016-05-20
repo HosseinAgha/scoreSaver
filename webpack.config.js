@@ -2,7 +2,11 @@ module.exports = config(process.env.NODE_ENV != "production")
 
 function config(devMode) {
   var options = {
-    entry: "./src",
+    entry: [
+      'webpack-dev-server/client?http://localhost:8081',
+      'webpack/hot/only-dev-server',
+      './src'
+    ],
     output: {
       path: "./build",
       filename: "bundle.js",
