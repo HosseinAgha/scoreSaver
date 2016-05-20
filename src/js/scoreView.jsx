@@ -1,5 +1,9 @@
-var ScoreViewClass = React.createClass({
-	render : function (argument) {
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import styles from './main.styl';
+
+export default class ScoreView extends Component {
+	render() {
 		return(
 			<aside class="scoreBoard">
 				<p>نفرات برتر</p>
@@ -22,5 +26,4 @@ var ScoreViewClass = React.createClass({
 			</aside>
 		)
 	}
-})
-module.export(ScoreViewClass)
+}
